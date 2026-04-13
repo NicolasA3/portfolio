@@ -1,15 +1,10 @@
 /* ===== Custom Cursor ===== */
 .cursor-dot {
-  position: fixed;
-  width: 8px;
-  height: 8px;
-  background: var(--accent-blue-light);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: var(--z-cursor);
-  transition: transform 0.1s ease, background 0.2s ease, width 0.2s ease, height 0.2s ease;
-  transform: translate(-50%, -50%);
-  mix-blend-mode: difference;
+  display: none !important;
+}
+
+.cursor-ring {
+  display: none !important;
 }
 
 .cursor-ring {
