@@ -14,6 +14,12 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
+    rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, 'index.html'),
+        proyecto: path.resolve(__dirname, 'proyecto.html'),
+      },
+    },
   },
   server: {
     port: 5173,

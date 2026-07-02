@@ -1,5 +1,5 @@
 // ===== i18n - Bilingual ES/EN =====
-const translations = {
+export const translations = {
   es: {
     // Nav
     'nav.about': 'Sobre Mí',
@@ -41,7 +41,13 @@ const translations = {
     'projects.ezer-utp.desc': 'Optimización de la planificación pedagógica. Retroalimentación instantánea sobre coherencia curricular y generación automática de material basado en OA.',
     'projects.floreria.desc': 'App Web de catálogo para una florería con panel de administración, gestión de productos y API serverless.',
     'projects.frahda.desc': 'App Web completa para un salón de belleza: gestión de clientes, pagos, agenda, servicios, tienda con portal de pago integrado (Getnet, Webpay, PayPal).',
+    'projects.eslainer.desc': 'Landing Page con Scroll-driven animation, carrusel de servicios, botones CTA, carrusel de logo clientes, proveedores y empresas acreditadas, creada con REACT + TAILWIND CSS y Vite.',
     'projects.private': '🔒 Privado',
+    'project.back': '← Volver al Portafolio',
+    'project.gallery_title': 'Galería de Capturas',
+    'project.gallery_subtitle': 'Explora el diseño e interfaz del proyecto',
+    'project.visit': '🌐 Ver Sitio',
+    'project.github': '🐙 GitHub',
 
     // Services
     'services.badge': 'Lo Que Hago',
@@ -125,7 +131,13 @@ const translations = {
     'projects.ezer-utp.desc': 'Pedagogical planning optimization. Instant feedback on curricular coherence and automatic generation of material based on Learning Objectives.',
     'projects.floreria.desc': 'Web catalog app for a flower shop with admin panel, product management, and serverless API.',
     'projects.frahda.desc': 'Complete web app for a beauty salon: client management, payments, scheduling, services, online store with integrated payment portal (Getnet, Webpay, PayPal).',
+    'projects.eslainer.desc': 'Landing page featuring Scroll-driven animation, services carousel, CTA buttons, logo carousel of clients, providers, and accredited companies, created with REACT + TAILWIND CSS and Vite.',
     'projects.private': '🔒 Private',
+    'project.back': '← Back to Portfolio',
+    'project.gallery_title': 'Screenshot Gallery',
+    'project.gallery_subtitle': "Explore the project's design and interface",
+    'project.visit': '🌐 View Live',
+    'project.github': '🐙 GitHub',
 
     // Services
     'services.badge': 'What I Do',
@@ -172,12 +184,24 @@ const translations = {
 let currentLang = 'es';
 
 export function initI18n() {
+  // Load saved language or default to 'es'
+  const savedLang = localStorage.getItem('lang') || 'es';
+  setLanguage(savedLang);
+
+  // Update all toggle buttons on load
+  document.querySelectorAll('.lang-toggle').forEach(toggle => {
+    toggle.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === savedLang);
+    });
+  });
+
   // Setup toggles
   const toggles = document.querySelectorAll('.lang-toggle');
   toggles.forEach(toggle => {
     const buttons = toggle.querySelectorAll('.lang-btn');
     buttons.forEach(btn => {
-      btn.addEventListener('click', () => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation(); // Avoid triggering any parent click
         const lang = btn.dataset.lang;
         setLanguage(lang);
 
@@ -192,6 +216,7 @@ export function initI18n() {
 
 export function setLanguage(lang) {
   currentLang = lang;
+  localStorage.setItem('lang', lang);
   document.documentElement.lang = lang;
 
   const elements = document.querySelectorAll('[data-i18n]');
