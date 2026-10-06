@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>CV - Fernando Adasme</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 10mm 12mm;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+      color: #222b45;
+      background-color: #fff;
+      line-height: 1.45;
+      font-size: 9.5pt;
+    }
+
+    /* Contenedor Principal */
+    .cv-container {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 22px;
+    }
+
+    /* Columna Lateral Izquierda */
+    .sidebar {
+      background-color: #f8fafc;
+      padding: 16px 14px;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+    }
+
+    .header-left {
+      margin-bottom: 18px;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 14px;
+    }
+
+    .header-left h1 {
+      font-size: 19pt;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.15;
+      letter-spacing: -0.5px;
+    }
+
+    .header-left .role {
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: #4f46e5;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-top: 4px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 6px;
+      font-size: 8.5pt;
+      color: #475569;
+      word-break: break-all;
+    }
+
+    .contact-item a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .section-title-side {
+      font-size: 10pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #0f172a;
+      border-bottom: 1.5px solid #cbd5e1;
+      padding-bottom: 3px;
+      margin-top: 14px;
+      margin-bottom: 8px;
+    }
+
+    .skills-group {
+      margin-bottom: 10px;
+    }
+
+    .skills-group h4 {
+      font-size: 8.5pt;
+      font-weight: 700;
+      color: #334155;
+      margin-bottom: 2px;
+    }
+
+    .skills-group p {
+      font-size: 8.2pt;
+      color: #64748b;
+      line-height: 1.35;
+    }
+
+    .edu-item, .cert-item, .ref-item {
+      margin-bottom: 10px;
+    }
+
+    .edu-item h4, .cert-item h4, .ref-item h4 {
+      font-size: 8.7pt;
+      font-weight: 700;
+      color: #1e293b;
+      line-height: 1.25;
+    }
+
+    .edu-item .sub, .cert-item .sub, .ref-item .sub {
+      font-size: 8pt;
+      color: #475569;
+    }
+
+    .edu-item .date, .cert-item .date, .ref-item .date {
+      font-size: 7.8pt;
+      color: #64748b;
+      font-weight: 600;
+    }
+
+    /* Columna Central / Experiencia */
+    .main-content {
+      padding: 4px 0;
+    }
+
+    .section-title-main {
+      font-size: 11pt;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #0f172a;
+      border-bottom: 2px solid #4f46e5;
+      padding-bottom: 3px;
+      margin-bottom: 10px;
+    }
+
+    .about-text {
+      font-size: 8.8pt;
+      color: #334155;
+      text-align: justify;
+      margin-bottom: 16px;
+      line-height: 1.4;
+    }
+
+    .job-item {
+      margin-bottom: 14px;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2px;
+    }
+
+    .job-title {
+      font-size: 9.7pt;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .company {
+      font-size: 9pt;
+      font-weight: 600;
+      color: #4f46e5;
+    }
+
+    .job-date {
+      font-size: 8.2pt;
+      font-weight: 600;
+      color: #64748b;
+      white-space: nowrap;
+    }
+
+    .job-bullets {
+      list-style-type: disc;
+      padding-left: 14px;
+      margin-top: 4px;
+      font-size: 8.5pt;
+      color: #334155;
+    }
+
+    .job-bullets li {
+      margin-bottom: 3.5px;
+      line-height: 1.35;
+    }
+
+    /* Grid de Módulos Ezer */
+    .modules-container {
+      background-color: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-left: 3px solid #6366f1;
+      border-radius: 6px;
+      padding: 8px 10px;
+      margin: 6px 0 8px 0;
+    }
+
+    .modules-title {
+      font-size: 8.4pt;
+      font-weight: 700;
+      color: #4338ca;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .modules-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 5px 12px;
+    }
+
+    .module-card {
+      font-size: 7.9pt;
+      line-height: 1.25;
+    }
+
+    .module-card strong {
+      color: #0f172a;
+    }
+
+    .module-card span {
+      color: #475569;
+    }
+
+    @media print {
+      body {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .cv-container {
+        gap: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cv-container">
+    
+    <!-- COLUMNA LATERAL IZQUIERDA -->
+    <aside class="sidebar">
+      <div class="header-left">
+        <h1>Fernando Adasme</h1>
+        <div class="role">Desarrollador Fullstack</div>
+      </div>
+
+      <!-- CONTACTO -->
+      <div class="contact-item">
+        <span>📧 fernandoadasme2004@gmail.com</span>
+      </div>
+      <div class="contact-item">
+        <span>📱 +569 7931 9818</span>
+      </div>
+      <div class="contact-item">
+        <span>📍 Antofagasta, Chile</span>
+      </div>
+      <div class="contact-item">
+        <span>🌐 <a href="https://www.adasmedev.com" target="_blank" style="color: #4f46e5; font-weight: 600;">www.adasmedev.com</a></span>
+      </div>
+
+      <!-- HABILIDADES -->
+      <div class="section-title-side">Habilidades</div>
+      
+      <div class="skills-group">
+        <h4>Lenguajes:</h4>
+        <p>JavaScript (ES6+), Python, HTML5, Java</p>
+      </div>
+
+      <div class="skills-group">
+        <h4>Frameworks y Librerías:</h4>
+        <p>React, Vite, Node.js, Django, Flask, Tailwind CSS</p>
+      </div>
+
+      <div class="skills-group">
+        <h4>Bases de Datos:</h4>
+        <p>PostgreSQL, MySQL</p>
+      </div>
+
+      <div class="skills-group">
+        <h4>Cloud & DevOps:</h4>
+        <p>Microsoft Azure (despliegue, infraestructura y gestión cloud), Docker, Git</p>
+      </div>
+
+      <div class="skills-group">
+        <h4>IA e Integraciones:</h4>
+        <p>Azure OpenAI / IA, N8N, Copilot, Gemini, ChatGPT, Lovable, Manychat</p>
+      </div>
+
+      <!-- FORMACIÓN -->
+      <div class="section-title-side">Formación Académica</div>
+      
+      <div class="edu-item">
+        <h4>Técnico Nivel Superior Computación e Informática c/m Ciberseguridad</h4>
+        <div class="sub">Ceduc UCN</div>
+        <div class="date">2024 – 2025</div>
+      </div>
+
+      <div class="edu-item">
+        <h4>Técnico Nivel Medio en Electrónica</h4>
+        <div class="sub">Colegio Técnico Industrial Don Bosco</div>
+        <div class="date">2017 – 2022</div>
+      </div>
+
+      <!-- CERTIFICACIONES -->
+      <div class="section-title-side">Certificaciones</div>
+
+      <div class="cert-item">
+        <h4>Programación y Análisis de Datos con Python</h4>
+        <div class="sub">Desafío Latam · 2026</div>
+      </div>
+
+      <div class="cert-item">
+        <h4>Scrum Foundation Learner</h4>
+        <div class="sub">CertiProf · 2024</div>
+      </div>
+
+      <!-- IDIOMAS -->
+      <div class="section-title-side">Idiomas</div>
+      <div style="font-size: 8.5pt; color: #334155; margin-bottom: 10px;">
+        <strong>Inglés:</strong> Nivel B2 Intermedio Profesional
+      </div>
+
+      <!-- REFERENCIAS -->
+      <div class="section-title-side">Referencias</div>
+      <div class="ref-item">
+        <h4>Sergio Fernández</h4>
+        <div class="sub">Jefe de Proyectos</div>
+        <div class="date">Fono: <a href="tel:+56975555999" style="color: inherit; text-decoration: none;">+56 9 7555 5999</a></div>
+      </div>
+    </aside>
+
+    <!-- COLUMNA PRINCIPAL DERECHA -->
+    <main class="main-content">
+      
+      <!-- PERFIL -->
+      <section>
+        <div class="section-title-main">Sobre Mí</div>
+        <p class="about-text">
+          Profesional con experiencia práctica en desarrollo web full stack y liderazgo en proyectos de arquitectura SaaS. Entusiasta de la automatización de procesos y la integración de soluciones con Inteligencia Artificial. Enfocado en la optimización continua con tecnologías modernas, construyendo software robusto, ágil y de alto impacto operacional.
+        </p>
+      </section>
+
+      <!-- EXPERIENCIA -->
+      <section>
+        <div class="section-title-main">Experiencia Laboral</div>
+
+        <!-- EZER SPA -->
+        <div class="job-item">
+          <div class="job-header">
+            <span class="job-title">Desarrollador Fullstack</span>
+            <span class="job-date">Sep 2024 – Presente</span>
+          </div>
+          <div class="company">Ezer SpA · <a href="https://www.ezer.cl" target="_blank" style="color: #4f46e5; text-decoration: none; font-weight: 600;">www.ezer.cl</a></div>
+          
+          <ul class="job-bullets">
+            <li>Desarrollo, despliegue y gestión integral de plataformas SaaS educativas y aplicaciones web a través de <strong><a href="https://www.ezer.cl" target="_blank" style="color: #4f46e5; text-decoration: underline;">www.ezer.cl</a></strong>.</li>
+            <li>Diseño de arquitectura de software, infraestructura cloud en <strong>Microsoft Azure</strong> y bases de datos robustas y escalables utilizando <strong>React, Vite, Tailwind CSS, Python y PostgreSQL</strong>.</li>
+            <li>Implementación de sistemas integrales de gestión administrativa, paneles interactivos y soluciones ágiles adaptadas a las normativas de instituciones educativas.</li>
+            <li>Integración de modelos de Inteligencia Artificial para análisis predictivo y conexión eficiente a bases de datos.</li>
+          </ul>
+
+          <!-- MÓDULOS DESARROLLADOS -->
+          <div class="modules-container">
+            <div class="modules-title">Módulos Desarrollados en Suite Ezer:</div>
+            <div class="modules-grid">
+              <div class="module-card">
+                <strong>• Gestión UTP:</strong> <span>Planificación, seguimiento curricular y acompañamiento docente centralizado.</span>
+              </div>
+              <div class="module-card">
+                <strong>• Mejoramiento SIMCE:</strong> <span>Diagnóstico inicial, medición de objetivos de aprendizaje (OA) y apoyos individuales.</span>
+              </div>
+              <div class="module-card">
+                <strong>• Gestión PME:</strong> <span>Acciones, responsables, recursos, indicadores y evidencias centralizadas.</span>
+              </div>
+              <div class="module-card">
+                <strong>• Convivencia Escolar:</strong> <span>Seguimiento de casos, compromisos, documentación y alertas tempranas.</span>
+              </div>
+              <div class="module-card">
+                <strong>• Gestión PAEC:</strong> <span>Organización de antecedentes, acompañamientos y seguimiento individual.</span>
+              </div>
+              <div class="module-card">
+                <strong>• Carta Gantt Institucional:</strong> <span>Coordinación integral entre sostenedor, equipo directivo, UTP y docentes.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FRAHDASTUDIO (PROYECTO) -->
+        <div class="job-item">
+          <div class="job-header">
+            <span class="job-title">Desarrollador Fullstack (Proyecto)</span>
+            <span class="job-date">Oct 2025 – Dic 2025</span>
+          </div>
+          <div class="company">Proyecto FrahdaStudio · Plataforma Web Progresiva</div>
+          <ul class="job-bullets">
+            <li>Planificación, modelado relacional y arquitectura del proyecto web progresivo (PWA).</li>
+            <li>Desarrollo de interfaces de usuario interactivas con React y TypeScript, junto a backends RESTful con Python y Django.</li>
+            <li>Configuración y optimización de consultas en base de datos.</li>
+            <li>Creación de un sistema de agenda automatizada y diseño de la experiencia de administración de usuarios.</li>
+          </ul>
+        </div>
+
+      </section>
+
+    </main>
+  </div>
+
+</body>
+</html>

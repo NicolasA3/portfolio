@@ -118,6 +118,71 @@
   white-space: nowrap;
 }
 
+.tech-badge.tech-ai {
+  background: rgba(0, 245, 255, 0.12);
+  border-color: rgba(0, 245, 255, 0.35);
+  color: var(--ai-cyan);
+  box-shadow: 0 0 12px rgba(0, 245, 255, 0.18);
+  font-weight: 500;
+}
+
+/* ===== AI Specialized Badges & Pills ===== */
+.ai-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  background: rgba(37, 99, 235, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.35);
+  border-radius: 50px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent-blue-light);
+  box-shadow: 0 0 16px rgba(37, 99, 235, 0.25);
+  backdrop-filter: blur(10px);
+  letter-spacing: 0.5px;
+  animation: ai-pulse 3.5s ease-in-out infinite;
+}
+
+.ai-badge-pulse {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent-blue-light);
+  box-shadow: 0 0 8px var(--accent-blue-light);
+  display: inline-block;
+  animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.5; }
+}
+
+@keyframes ai-pulse {
+  0%, 100% { box-shadow: 0 0 15px rgba(37, 99, 235, 0.2); }
+  50% { box-shadow: 0 0 25px rgba(37, 99, 235, 0.4); }
+}
+
+/* Featured AI Card highlight */
+.ai-featured-card {
+  border-color: rgba(37, 99, 235, 0.4) !important;
+  background: rgba(14, 25, 60, 0.8) !important;
+  box-shadow: 0 0 30px rgba(37, 99, 235, 0.15) !important;
+  position: relative;
+}
+
+.ai-featured-card::before {
+  opacity: 1 !important;
+  background: rgba(37, 99, 235, 0.05) !important;
+}
+
+.ai-featured-card:hover {
+  border-color: var(--accent-blue-light) !important;
+  box-shadow: 0 0 30px rgba(37, 99, 235, 0.35) !important;
+}
+
 /* ===== Divider ===== */
 .divider {
   height: 1px;

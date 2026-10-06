@@ -120,9 +120,18 @@ function loadProjectDetails(project) {
   techContainer.innerHTML = '';
   project.tech.forEach(tech => {
     const badge = document.createElement('span');
-    badge.className = 'tech-badge';
+    const isAi = tech.toLowerCase().includes('openai') || tech.toLowerCase().includes('ia') || tech.toLowerCase().includes('ai');
+    badge.className = isAi ? 'tech-badge tech-ai' : 'tech-badge';
     badge.textContent = tech;
     techContainer.appendChild(badge);
+  });
+
+  // Re-translate on language change
+  window.addEventListener('languageChanged', (e) => {
+    const currentLang = e.detail?.lang || 'es';
+    import('./i18n.js').then(({ translations }) => {
+      descEl.textContent = translations[currentLang]?.[project.descKey] || '';
+    });
   });
 
   // Load Links (Live, GitHub or Private)

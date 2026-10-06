@@ -43,10 +43,6 @@
   <!-- ===================== NAVIGATION ===================== -->
   <nav class="navbar" id="navbar">
     <div class="nav-container">
-      <a href="#hero" class="nav-logo" aria-label="Home">
-        <div class="nav-logo-icon">FA</div>
-      </a>
-
       <ul class="nav-links" id="nav-links">
         <li><a href="#about" class="nav-link" data-i18n="nav.about">Sobre Mí</a></li>
         <li><a href="#skills" class="nav-link" data-i18n="nav.skills">Habilidades</a></li>
@@ -73,14 +69,14 @@
   <!-- Mobile Navigation -->
   <div class="mobile-nav" id="mobile-nav">
     <ul class="mobile-nav-links">
-      <li><a href="#about" class="mobile-nav-link" data-i18n="nav.about">Sobre Mí</a></li>
-      <li><a href="#skills" class="mobile-nav-link" data-i18n="nav.skills">Habilidades</a></li>
-      <li><a href="#projects" class="mobile-nav-link" data-i18n="nav.projects">Proyectos</a></li>
-      <li><a href="#services" class="mobile-nav-link" data-i18n="nav.services">Servicios</a></li>
-      <li><a href="#experience" class="mobile-nav-link" data-i18n="nav.experience">Experiencia</a></li>
-      <li><a href="#contact" class="mobile-nav-link" data-i18n="nav.contact">Contacto</a></li>
-      <li style="padding-top: 8px;">
-        <div class="lang-toggle" id="lang-toggle-mobile">
+      <li><a href="#about" class="mobile-nav-link"><span data-i18n="nav.about">Sobre Mí</span><span style="opacity: 0.5;">→</span></a></li>
+      <li><a href="#skills" class="mobile-nav-link"><span data-i18n="nav.skills">Habilidades</span><span style="opacity: 0.5;">→</span></a></li>
+      <li><a href="#projects" class="mobile-nav-link"><span data-i18n="nav.projects">Proyectos</span><span style="opacity: 0.5;">→</span></a></li>
+      <li><a href="#services" class="mobile-nav-link"><span data-i18n="nav.services">Servicios</span><span style="opacity: 0.5;">→</span></a></li>
+      <li><a href="#experience" class="mobile-nav-link"><span data-i18n="nav.experience">Experiencia</span><span style="opacity: 0.5;">→</span></a></li>
+      <li><a href="#contact" class="mobile-nav-link"><span data-i18n="nav.contact">Contacto</span><span style="opacity: 0.5;">→</span></a></li>
+      <li style="padding-top: 14px; display: flex; justify-content: center;">
+        <div class="lang-toggle" id="lang-toggle-mobile" style="transform: scale(1.05);">
           <button class="lang-btn active" data-lang="es">ES</button>
           <button class="lang-btn" data-lang="en">EN</button>
         </div>
@@ -103,7 +99,7 @@
         </div>
 
         <h1 class="hero-name" style="text-shadow: 0 4px 20px rgba(0,0,0,0.5);">
-          Fernando <span class="highlight" style="background: linear-gradient(135deg, #60a5fa, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Adasme</span>
+          Fernando <span class="highlight" style="color: var(--accent-blue-light);">Adasme</span>
         </h1>
 
         <p class="hero-title" data-i18n="hero.title" style="text-shadow: 0 2px 10px rgba(0,0,0,0.5);">Full-Stack Developer · AI Integration Specialist</p>
@@ -113,8 +109,8 @@
         </p>
 
         <div class="hero-cta" style="justify-content: center;">
-          <a href="#proyectos" class="btn btn-primary" data-i18n="hero.cta.projects">VER PROYECTOS</a>
-          <a href="#contacto" class="btn btn-outline" data-i18n="hero.cta.contact">CONTÁCTAME</a>
+          <a href="#projects" class="btn btn-primary" data-i18n="hero.cta.projects">VER PROYECTOS</a>
+          <a href="#contact" class="btn btn-outline" data-i18n="hero.cta.contact">CONTÁCTAME</a>
         </div>
       </div>
     </div>
@@ -163,7 +159,10 @@
           <div class="about-image-wrapper">
             <div class="about-abstract">
               <div class="about-abstract-inner">
-                <span>👨‍💻</span>
+                <div class="about-ai-core">
+                  <span class="about-ai-core-icon">🧠</span>
+                  <span class="about-ai-core-label" data-i18n="about.core_label">NÚCLEO IA & FULL-STACK</span>
+                </div>
               </div>
             </div>
           </div>
@@ -224,17 +223,22 @@
           </div>
         </div>
 
-        <!-- AI & Tools -->
-        <div class="glass-card skill-category reveal delay-4">
-          <h3 class="skill-category-title">
-            <span class="skill-category-icon">🤖</span>
-            <span data-i18n="skills.ai">IA & Herramientas</span>
-          </h3>
+        <!-- AI & Tools (Featured Core Specialization) -->
+        <div class="glass-card skill-category ai-featured-card reveal delay-4">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 8px;">
+            <h3 class="skill-category-title" style="margin-bottom: 0;">
+              <span class="skill-category-icon" style="background: rgba(0, 245, 255, 0.15); color: var(--ai-cyan);">🤖</span>
+              <span data-i18n="skills.ai">IA & Herramientas</span>
+            </h3>
+            <span class="ai-badge" data-i18n="skills.ai_specialty">✦ Especialidad Principal</span>
+          </div>
           <div class="skill-items">
-            <div class="skill-item"><span class="skill-item-icon">🧠</span><span class="skill-item-name">OpenAI</span></div>
+            <div class="skill-item" style="border-color: rgba(0, 245, 255, 0.3); background: rgba(0, 245, 255, 0.05);"><span class="skill-item-icon">🧠</span><span class="skill-item-name" style="color: var(--ai-cyan); font-weight: 600;">OpenAI / LLMs</span></div>
+            <div class="skill-item" style="border-color: rgba(139, 92, 246, 0.3); background: rgba(139, 92, 246, 0.05);"><span class="skill-item-icon">⚡</span><span class="skill-item-name">Agentes IA & Prompts</span></div>
             <div class="skill-item"><span class="skill-item-icon">🔄</span><span class="skill-item-name">Render</span></div>
             <div class="skill-item"><span class="skill-item-icon">📦</span><span class="skill-item-name">Git / GitHub</span></div>
             <div class="skill-item"><span class="skill-item-icon">🔌</span><span class="skill-item-name">REST APIs</span></div>
+            <div class="skill-item"><span class="skill-item-icon">🔷</span><span class="skill-item-name">Azure Cloud</span></div>
           </div>
         </div>
       </div>
@@ -254,6 +258,9 @@
         <!-- Ezer PME -->
         <div class="glass-card project-card reveal delay-1" style="cursor: pointer;" onclick="window.location.href='/proyecto.html?id=ezer-pme'">
           <div class="project-image">
+            <div class="project-ai-badge">
+              <span class="ai-badge"><span class="ai-badge-pulse"></span> <span data-i18n="projects.ai_badge">✨ Potenciado con IA</span></span>
+            </div>
             <img src="/images/ezer-pme/Captura de pantalla 2026-03-16 191517.png" alt="Ezer PME" loading="lazy" />
             <div class="project-image-overlay"></div>
           </div>
@@ -263,10 +270,10 @@
               Plataforma para la gestión inteligente del Plan de Mejoramiento Escolar. Generador de acciones con justificación pedagógica y normativa automática con IA.
             </p>
             <div class="project-tech">
+              <span class="tech-badge tech-ai">OpenAI</span>
               <span class="tech-badge">Python</span>
               <span class="tech-badge">Flask</span>
               <span class="tech-badge">React</span>
-              <span class="tech-badge">OpenAI</span>
               <span class="tech-badge">Azure</span>
               <span class="tech-badge">Redis</span>
             </div>
@@ -279,6 +286,9 @@
         <!-- Ezer UTP -->
         <div class="glass-card project-card reveal delay-2" style="cursor: pointer;" onclick="window.location.href='/proyecto.html?id=ezer-utp'">
           <div class="project-image">
+            <div class="project-ai-badge">
+              <span class="ai-badge"><span class="ai-badge-pulse"></span> <span data-i18n="projects.ai_badge">✨ Potenciado con IA</span></span>
+            </div>
             <img src="/images/ezer-utp/Captura de pantalla 2026-03-16 191953.png" alt="Ezer UTP" loading="lazy" />
             <div class="project-image-overlay"></div>
           </div>
@@ -288,9 +298,9 @@
               Optimización de la planificación pedagógica. Retroalimentación instantánea sobre coherencia curricular y generación automática de material basado en OA.
             </p>
             <div class="project-tech">
+              <span class="tech-badge tech-ai">OpenAI</span>
               <span class="tech-badge">React 19</span>
               <span class="tech-badge">Flask</span>
-              <span class="tech-badge">OpenAI</span>
               <span class="tech-badge">Azure</span>
               <span class="tech-badge">Supabase</span>
               <span class="tech-badge">Tailwind</span>
@@ -396,7 +406,8 @@
           </p>
         </div>
 
-        <div class="glass-card service-card reveal delay-2">
+        <div class="glass-card service-card service-ai-featured reveal delay-2">
+          <span class="service-featured-pill" data-i18n="services.ai_featured">⭐ Especialidad Core</span>
           <div class="service-icon">🤖</div>
           <h3 class="service-title" data-i18n="services.ai.title">Integración IA</h3>
           <p class="service-description" data-i18n="services.ai.desc">

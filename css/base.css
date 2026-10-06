@@ -9,9 +9,11 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--nav-height) + 16px);
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 body {
@@ -20,7 +22,18 @@ body {
   color: var(--text-primary);
   line-height: 1.7;
   overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
   cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Cpath d='M4 2 L20 10 L12 12 L9 20 Z' fill='%23FACC15' stroke='%23ffffff' stroke-width='1.5' stroke-linejoin='round'/%3E%3C/svg%3E") 4 2, auto;
+}
+
+/* Touch devices should never use custom URL cursors */
+@media (hover: none) or (pointer: coarse) {
+  body {
+    cursor: auto !important;
+  }
+  a, button, .btn {
+    cursor: pointer !important;
+  }
 }
 
 /* ===== Scrollbar ===== */
@@ -109,10 +122,7 @@ img {
   font-family: var(--font-heading);
   font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 700;
-  background: var(--gradient-text);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--text-primary);
   line-height: 1.2;
   margin-bottom: 16px;
 }
@@ -126,10 +136,7 @@ img {
 
 /* ===== Typography helpers ===== */
 .gradient-text {
-  background: var(--gradient-text);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--accent-blue-light);
 }
 
 .glow-text {

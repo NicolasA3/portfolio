@@ -137,3 +137,28 @@
 .delay-4 { transition-delay: 0.4s; }
 .delay-5 { transition-delay: 0.5s; }
 .delay-6 { transition-delay: 0.6s; }
+
+/* Blinking dot for Trust Badge */
+@keyframes trust-dot-blink {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 10px #00F5FF, 0 0 20px rgba(0, 245, 255, 0.6);
+  }
+  50% {
+    opacity: 0.2;
+    transform: scale(0.65);
+    box-shadow: 0 0 2px #00F5FF;
+  }
+}
+
+.trust-badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #00F5FF;
+  display: inline-block;
+  box-shadow: 0 0 10px #00F5FF;
+  animation: trust-dot-blink 1.4s ease-in-out infinite;
+  flex-shrink: 0;
+}

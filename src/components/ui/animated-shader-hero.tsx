@@ -384,70 +384,135 @@ export const AnimatedShaderHero: React.FC<HeroProps> = ({
       <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-white" style={{ position: 'absolute', inset: 0, zIndex: 10, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
         {/* Trust Badge */}
         {trustBadge && (
-          <div className="mb-8 animate-fade-in-down">
-            <div className="flex items-center gap-2 px-6 py-3 bg-blue-500/10 backdrop-blur-md border border-blue-300/30 rounded-full text-sm" style={{ padding: '12px 24px', background: 'rgba(59, 130, 246, 0.1)', backdropFilter: 'blur(12px)', border: '1px solid rgba(147, 197, 253, 0.3)', borderRadius: '9999px', fontSize: '0.875rem' }}>
-              {trustBadge.icons && (
-                <div className="flex" style={{ display: 'flex' }}>
-                  {trustBadge.icons.map((icon, index) => (
-                    <span key={index} className="text-cyan-300" style={{ color: '#67e8f9' }}>
-                      {icon}
-                    </span>
-                  ))}
-                </div>
-              )}
-              <span className="text-blue-100" style={{ color: '#dbeafe' }}>{trustBadge.text}</span>
+          <div className="mb-6 animate-fade-in-down" style={{ marginBottom: '1.5rem' }}>
+            <div 
+              className="inline-flex items-center gap-2.5" 
+              style={{ 
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.625rem',
+                padding: '8px 20px', 
+                background: 'rgba(15, 23, 60, 0.65)', 
+                backdropFilter: 'blur(12px)', 
+                WebkitBackdropFilter: 'blur(12px)',
+                border: '1px solid rgba(0, 245, 255, 0.35)', 
+                borderRadius: '9999px', 
+                fontSize: '0.85rem',
+                color: '#e0f2fe',
+                fontFamily: 'var(--font-mono)',
+                boxShadow: '0 0 20px rgba(0, 245, 255, 0.2)'
+              }}
+            >
+              <span 
+                className="trust-badge-dot" 
+                style={{ 
+                  width: '8px', 
+                  height: '8px', 
+                  borderRadius: '50%', 
+                  background: '#00F5FF', 
+                  boxShadow: '0 0 10px #00F5FF', 
+                  display: 'inline-block',
+                  animation: 'trust-dot-blink 1.4s ease-in-out infinite',
+                  flexShrink: 0
+                }}
+              ></span>
+              <span style={{ fontWeight: 500 }}>{trustBadge.text}</span>
             </div>
           </div>
         )}
 
-        <div className="text-center space-y-6 max-w-5xl mx-auto px-4" style={{ textAlign: 'center', maxWidth: '64rem', padding: '0 1rem' }}>
+        <div className="text-center max-w-5xl mx-auto px-4" style={{ textAlign: 'center', maxWidth: '64rem', padding: '0 1rem' }}>
           {/* Main Heading with Animation */}
-          <div className="flex flex-wrap justify-center items-center" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', columnGap: '1.5rem', width: '100%' }}>
-            <h1 className="animate-fade-in-up animation-delay-200" style={{ 
-              fontSize: 'clamp(3rem, 7vw, 5.5rem)', 
-              lineHeight: '1.1', 
-              fontWeight: 'bold', 
-              backgroundImage: 'linear-gradient(to right, #93c5fd, #22d3ee, #7dd3fc)', 
-              WebkitBackgroundClip: 'text', 
-              backgroundClip: 'text',
-              WebkitTextFillColor: 'transparent', 
-              color: 'transparent',
-              animationFillMode: 'forwards',
-              margin: 0
-            }}>
+          <div 
+            className="flex flex-wrap justify-center items-center" 
+            style={{ 
+              display: 'flex', 
+              flexWrap: 'wrap', 
+              justifyContent: 'center', 
+              alignItems: 'center', 
+              columnGap: '1rem', 
+              rowGap: '0.25rem',
+              width: '100%' 
+            }}
+          >
+            <h1 
+              className="animate-fade-in-up animation-delay-200" 
+              style={{ 
+                fontFamily: 'var(--font-heading)',
+                fontSize: 'clamp(2.5rem, 7.5vw, 5.2rem)', 
+                lineHeight: '1.12', 
+                fontWeight: 800, 
+                letterSpacing: '-0.02em',
+                color: '#ffffff', 
+                animationFillMode: 'forwards',
+                margin: 0
+              }}
+            >
               {headline.line1}
             </h1>
-            <h1 className="animate-fade-in-up animation-delay-400" style={{ 
-              fontSize: 'clamp(3rem, 7vw, 5.5rem)', 
-              lineHeight: '1.1', 
-              fontWeight: 'bold', 
-              backgroundImage: 'linear-gradient(to right, #67e8f9, #60a5fa, #818cf8)', 
-              WebkitBackgroundClip: 'text', 
-              backgroundClip: 'text',
-              WebkitTextFillColor: 'transparent', 
-              color: 'transparent',
-              animationFillMode: 'forwards',
-              margin: 0
-            }}>
+            <h1 
+              className="animate-fade-in-up animation-delay-400" 
+              style={{ 
+                fontFamily: 'var(--font-heading)',
+                fontSize: 'clamp(2.5rem, 7.5vw, 5.2rem)', 
+                lineHeight: '1.12', 
+                fontWeight: 800, 
+                letterSpacing: '-0.02em',
+                color: 'var(--accent-blue-light)', 
+                animationFillMode: 'forwards',
+                margin: 0
+              }}
+            >
               {headline.line2}
             </h1>
           </div>
           
           {/* Subtitle with Animation */}
           <div className="max-w-3xl mx-auto animate-fade-in-up animation-delay-600" style={{ maxWidth: '48rem', margin: '1.5rem auto' }}>
-            <p className="text-lg md:text-xl lg:text-2xl text-blue-100/90 font-light leading-relaxed" style={{ fontSize: '1.125rem', color: 'rgba(219, 234, 254, 0.9)', fontWeight: 300, lineHeight: 1.625 }}>
+            <p 
+              style={{ 
+                fontFamily: 'var(--font-body)',
+                fontSize: 'clamp(1rem, 2.2vw, 1.25rem)', 
+                color: 'rgba(224, 242, 254, 0.92)', 
+                fontWeight: 400, 
+                lineHeight: 1.65 
+              }}
+            >
               {subtitle}
             </p>
           </div>
           
           {/* CTA Buttons with Animation */}
           {buttons && (
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10 animate-fade-in-up animation-delay-800" style={{ display: 'flex', gap: '1rem', justifyContent: 'center', marginTop: '2.5rem' }}>
+            <div 
+              className="hero-cta-buttons animate-fade-in-up animation-delay-800" 
+              style={{ 
+                display: 'flex', 
+                flexWrap: 'wrap', 
+                gap: '1rem', 
+                justifyContent: 'center', 
+                alignItems: 'center',
+                marginTop: '2.5rem' 
+              }}
+            >
               {buttons.primary && (
                 <button 
                   onClick={buttons.primary.onClick}
-                  className="px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-black rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/25"
-                  style={{ padding: '1rem 2rem', background: 'linear-gradient(to right, #3b82f6, #06b6d4)', color: 'white', borderRadius: '9999px', fontWeight: 600, fontSize: '1.125rem', border: 'none', cursor: 'pointer' }}
+                  className="transition-all duration-300 hover:scale-105"
+                  style={{ 
+                    padding: '0.9rem 2.2rem', 
+                    background: 'var(--accent-blue)', 
+                    color: '#ffffff', 
+                    borderRadius: '9999px', 
+                    fontWeight: 700, 
+                    fontFamily: 'var(--font-heading)',
+                    fontSize: '1rem', 
+                    letterSpacing: '0.5px',
+                    border: 'none', 
+                    cursor: 'pointer',
+                    boxShadow: '0 0 25px rgba(37, 99, 235, 0.45)',
+                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+                  }}
                 >
                   {buttons.primary.text}
                 </button>
@@ -455,8 +520,23 @@ export const AnimatedShaderHero: React.FC<HeroProps> = ({
               {buttons.secondary && (
                 <button 
                   onClick={buttons.secondary.onClick}
-                  className="px-8 py-4 bg-blue-500/10 hover:bg-blue-500/20 border border-blue-300/30 hover:border-blue-300/50 text-blue-100 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 backdrop-blur-sm"
-                  style={{ padding: '1rem 2rem', background: 'rgba(59, 130, 246, 0.1)', border: '1px solid rgba(147, 197, 253, 0.3)', color: '#dbeafe', borderRadius: '9999px', fontWeight: 600, fontSize: '1.125rem', cursor: 'pointer', backdropFilter: 'blur(4px)' }}
+                  className="transition-all duration-300 hover:scale-105"
+                  style={{ 
+                    padding: '0.9rem 2.2rem', 
+                    background: 'rgba(15, 23, 60, 0.65)', 
+                    border: '1px solid rgba(56, 189, 248, 0.35)', 
+                    color: '#f8fafc', 
+                    borderRadius: '9999px', 
+                    fontWeight: 600, 
+                    fontFamily: 'var(--font-heading)',
+                    fontSize: '1rem', 
+                    letterSpacing: '0.5px',
+                    cursor: 'pointer', 
+                    backdropFilter: 'blur(10px)',
+                    WebkitBackdropFilter: 'blur(10px)',
+                    boxShadow: '0 0 15px rgba(37, 99, 235, 0.2)',
+                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+                  }}
                 >
                   {buttons.secondary.text}
                 </button>

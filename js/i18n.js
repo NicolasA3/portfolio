@@ -25,18 +25,21 @@ export const translations = {
     'about.stat.projects': 'Proyectos',
     'about.stat.technologies': 'Tecnologías',
     'about.stat.experience': 'Año Exp.',
+    'about.core_label': 'NÚCLEO IA & FULL-STACK',
 
     // Skills
     'skills.badge': 'Stack Técnico',
     'skills.title': 'Habilidades & Tecnologías',
-    'skills.subtitle': 'Las herramientas que uso para dar vida a las ideas',
+    'skills.subtitle': 'Las herramientas y modelos que uso para dar vida a las ideas',
     'skills.cloud': 'Base de Datos & Cloud',
     'skills.ai': 'IA & Herramientas',
+    'skills.ai_specialty': '✦ Especialidad Principal',
 
     // Projects
     'projects.badge': 'Portafolio',
     'projects.title': 'Proyectos Destacados',
     'projects.subtitle': 'Una selección de mi trabajo más reciente',
+    'projects.ai_badge': '✨ Potenciado con IA',
     'projects.ezer-pme.desc': 'Plataforma para la gestión inteligente del Plan de Mejoramiento Escolar. Generador de acciones con justificación pedagógica y normativa automática con IA.',
     'projects.ezer-utp.desc': 'Optimización de la planificación pedagógica. Retroalimentación instantánea sobre coherencia curricular y generación automática de material basado en OA.',
     'projects.floreria.desc': 'App Web de catálogo para una florería con panel de administración, gestión de productos y API serverless.',
@@ -53,6 +56,7 @@ export const translations = {
     'services.badge': 'Lo Que Hago',
     'services.title': 'Mis Servicios',
     'services.subtitle': 'Soluciones digitales de principio a fin',
+    'services.ai_featured': '⭐ Especialidad Core',
     'services.web.title': 'Desarrollo Web',
     'services.web.desc': 'Aplicaciones web completas y responsivas con React, Python y tecnologías modernas. Desde landing pages hasta plataformas complejas con paneles de administración.',
     'services.ai.title': 'Integración IA',
@@ -115,18 +119,21 @@ export const translations = {
     'about.stat.projects': 'Projects',
     'about.stat.technologies': 'Technologies',
     'about.stat.experience': 'Year Exp.',
+    'about.core_label': 'AI & FULL-STACK CORE',
 
     // Skills
     'skills.badge': 'Tech Stack',
     'skills.title': 'Skills & Technologies',
-    'skills.subtitle': 'The tools I use to bring ideas to life',
+    'skills.subtitle': 'The tools and models I use to bring ideas to life',
     'skills.cloud': 'Database & Cloud',
     'skills.ai': 'AI & Tools',
+    'skills.ai_specialty': '✦ Core Focus',
 
     // Projects
     'projects.badge': 'Portfolio',
     'projects.title': 'Featured Projects',
     'projects.subtitle': 'A selection of my most recent work',
+    'projects.ai_badge': '✨ AI-Powered',
     'projects.ezer-pme.desc': 'Platform for intelligent management of School Improvement Plans. AI-powered action generator with automatic pedagogical and regulatory justification.',
     'projects.ezer-utp.desc': 'Pedagogical planning optimization. Instant feedback on curricular coherence and automatic generation of material based on Learning Objectives.',
     'projects.floreria.desc': 'Web catalog app for a flower shop with admin panel, product management, and serverless API.',
@@ -143,6 +150,7 @@ export const translations = {
     'services.badge': 'What I Do',
     'services.title': 'My Services',
     'services.subtitle': 'End-to-end digital solutions',
+    'services.ai_featured': '⭐ Core Specialization',
     'services.web.title': 'Web Development',
     'services.web.desc': 'Complete and responsive web applications with React, Python, and modern technologies. From landing pages to complex platforms with admin panels.',
     'services.ai.title': 'AI Integration',
@@ -164,7 +172,7 @@ export const translations = {
     'contact.badge': 'Contact',
     'contact.title': "Let's Work Together",
     'contact.subtitle': 'Have a project in mind? Let\'s talk!',
-    'contact.info.title': "Let's Connect",
+    'contact.info.title': 'Let\'s Connect',
     'contact.info.desc': 'I\'m available for freelance projects, collaborations, and job opportunities. Don\'t hesitate to reach out.',
     'contact.form.name': 'Name',
     'contact.form.email': 'Email',
@@ -241,6 +249,9 @@ export function setLanguage(lang) {
       el.placeholder = translation;
     }
   });
+
+  // Notify components (e.g. React Hero)
+  window.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang } }));
 }
 
 export function getCurrentLang() {
