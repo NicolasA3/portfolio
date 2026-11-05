@@ -34,9 +34,9 @@ export function initStarfield() {
 
   function createNebulae() {
     nebulae = [
-      { x: width * 0.2, y: height * 0.3, radius: 300, color: 'rgba(124, 58, 237, 0.03)', speed: 0.0002 },
-      { x: width * 0.8, y: height * 0.2, radius: 250, color: 'rgba(37, 99, 235, 0.025)', speed: 0.00015 },
-      { x: width * 0.5, y: height * 0.8, radius: 280, color: 'rgba(6, 182, 212, 0.02)', speed: 0.00025 },
+      { x: width * 0.2, y: height * 0.3, radius: 300, color: 'rgba(163, 230, 53, 0.025)', speed: 0.0002 },
+      { x: width * 0.8, y: height * 0.2, radius: 250, color: 'rgba(30, 41, 59, 0.05)', speed: 0.00015 },
+      { x: width * 0.5, y: height * 0.8, radius: 280, color: 'rgba(163, 230, 53, 0.02)', speed: 0.00025 },
     ];
   }
 
@@ -46,14 +46,14 @@ export function initStarfield() {
 
     ctx.beginPath();
     ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(200, 215, 255, ${alpha})`;
+    ctx.fillStyle = `rgba(243, 244, 246, ${alpha})`;
     ctx.fill();
 
-    // Subtle glow for brighter stars
+    // Subtle lime glow for brighter stars
     if (star.radius > 1) {
       ctx.beginPath();
       ctx.arc(star.x, star.y, star.radius * 3, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(150, 180, 255, ${alpha * 0.15})`;
+      ctx.fillStyle = `rgba(163, 230, 53, ${alpha * 0.2})`;
       ctx.fill();
     }
   }
@@ -109,8 +109,8 @@ export function initStarfield() {
       const tailY = y + Math.sin(angle) * length * Math.max(0, progress - 0.3);
 
       const grad = ctx.createLinearGradient(tailX, tailY, currentX, currentY);
-      grad.addColorStop(0, 'rgba(200, 220, 255, 0)');
-      grad.addColorStop(1, `rgba(200, 220, 255, ${1 - progress})`);
+      grad.addColorStop(0, 'rgba(163, 230, 53, 0)');
+      grad.addColorStop(1, `rgba(163, 230, 53, ${1 - progress})`);
 
       ctx.beginPath();
       ctx.moveTo(tailX, tailY);

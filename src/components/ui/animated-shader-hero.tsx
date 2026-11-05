@@ -377,7 +377,7 @@ export const AnimatedShaderHero: React.FC<HeroProps> = ({
       <canvas
         ref={canvasRef}
         className="absolute inset-0 w-full h-full object-contain touch-none"
-        style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', background: 'black', objectFit: 'cover' }}
+        style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', background: '#0B0F17', objectFit: 'cover' }}
       />
       
       {/* Hero Content Overlay */}
@@ -392,15 +392,15 @@ export const AnimatedShaderHero: React.FC<HeroProps> = ({
                 alignItems: 'center',
                 gap: '0.625rem',
                 padding: '8px 20px', 
-                background: 'rgba(15, 23, 60, 0.65)', 
+                background: 'rgba(17, 24, 39, 0.8)', 
                 backdropFilter: 'blur(12px)', 
                 WebkitBackdropFilter: 'blur(12px)',
-                border: '1px solid rgba(0, 245, 255, 0.35)', 
+                border: '1px solid rgba(163, 230, 53, 0.35)', 
                 borderRadius: '9999px', 
                 fontSize: '0.85rem',
-                color: '#e0f2fe',
+                color: '#F3F4F6',
                 fontFamily: 'var(--font-mono)',
-                boxShadow: '0 0 20px rgba(0, 245, 255, 0.2)'
+                boxShadow: '0 0 20px rgba(163, 230, 53, 0.2)'
               }}
             >
               <span 
@@ -409,14 +409,14 @@ export const AnimatedShaderHero: React.FC<HeroProps> = ({
                   width: '8px', 
                   height: '8px', 
                   borderRadius: '50%', 
-                  background: '#00F5FF', 
-                  boxShadow: '0 0 10px #00F5FF', 
+                  background: '#A3E635', 
+                  boxShadow: '0 0 10px #A3E635', 
                   display: 'inline-block',
                   animation: 'trust-dot-blink 1.4s ease-in-out infinite',
                   flexShrink: 0
                 }}
               ></span>
-              <span style={{ fontWeight: 500 }}>{trustBadge.text}</span>
+              <span style={{ fontWeight: 600 }}>{trustBadge.text}</span>
             </div>
           </div>
         )}
@@ -441,9 +441,9 @@ export const AnimatedShaderHero: React.FC<HeroProps> = ({
                 fontFamily: 'var(--font-heading)',
                 fontSize: 'clamp(2.5rem, 7.5vw, 5.2rem)', 
                 lineHeight: '1.12', 
-                fontWeight: 800, 
+                fontWeight: 900, 
                 letterSpacing: '-0.02em',
-                color: '#ffffff', 
+                color: '#F3F4F6', 
                 animationFillMode: 'forwards',
                 margin: 0
               }}
@@ -456,9 +456,10 @@ export const AnimatedShaderHero: React.FC<HeroProps> = ({
                 fontFamily: 'var(--font-heading)',
                 fontSize: 'clamp(2.5rem, 7.5vw, 5.2rem)', 
                 lineHeight: '1.12', 
-                fontWeight: 800, 
+                fontWeight: 900, 
                 letterSpacing: '-0.02em',
-                color: 'var(--accent-blue-light)', 
+                color: '#A3E635', 
+                textShadow: '0 0 35px rgba(163, 230, 53, 0.45)',
                 animationFillMode: 'forwards',
                 margin: 0
               }}
@@ -473,7 +474,7 @@ export const AnimatedShaderHero: React.FC<HeroProps> = ({
               style={{ 
                 fontFamily: 'var(--font-body)',
                 fontSize: 'clamp(1rem, 2.2vw, 1.25rem)', 
-                color: 'rgba(224, 242, 254, 0.92)', 
+                color: '#CBD5E1', 
                 fontWeight: 400, 
                 lineHeight: 1.65 
               }}
@@ -500,17 +501,17 @@ export const AnimatedShaderHero: React.FC<HeroProps> = ({
                   onClick={buttons.primary.onClick}
                   className="transition-all duration-300 hover:scale-105"
                   style={{ 
-                    padding: '0.9rem 2.2rem', 
-                    background: 'var(--accent-blue)', 
-                    color: '#ffffff', 
+                    padding: '0.9rem 2.4rem', 
+                    background: '#A3E635', 
+                    color: '#111827', 
                     borderRadius: '9999px', 
-                    fontWeight: 700, 
+                    fontWeight: 800, 
                     fontFamily: 'var(--font-heading)',
                     fontSize: '1rem', 
-                    letterSpacing: '0.5px',
+                    letterSpacing: '0.8px',
                     border: 'none', 
                     cursor: 'pointer',
-                    boxShadow: '0 0 25px rgba(37, 99, 235, 0.45)',
+                    boxShadow: '0 0 25px rgba(163, 230, 53, 0.5)',
                     transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
                   }}
                 >
@@ -522,19 +523,19 @@ export const AnimatedShaderHero: React.FC<HeroProps> = ({
                   onClick={buttons.secondary.onClick}
                   className="transition-all duration-300 hover:scale-105"
                   style={{ 
-                    padding: '0.9rem 2.2rem', 
-                    background: 'rgba(15, 23, 60, 0.65)', 
-                    border: '1px solid rgba(56, 189, 248, 0.35)', 
-                    color: '#f8fafc', 
+                    padding: '0.9rem 2.4rem', 
+                    background: 'rgba(17, 24, 39, 0.8)', 
+                    border: '1px solid rgba(163, 230, 53, 0.35)', 
+                    color: '#F3F4F6', 
                     borderRadius: '9999px', 
                     fontWeight: 600, 
                     fontFamily: 'var(--font-heading)',
                     fontSize: '1rem', 
-                    letterSpacing: '0.5px',
+                    letterSpacing: '0.8px',
                     cursor: 'pointer', 
                     backdropFilter: 'blur(10px)',
                     WebkitBackdropFilter: 'blur(10px)',
-                    boxShadow: '0 0 15px rgba(37, 99, 235, 0.2)',
+                    boxShadow: '0 0 20px rgba(163, 230, 53, 0.15)',
                     transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
                   }}
                 >
@@ -609,16 +610,16 @@ void main(void) {
 		uv+=.1*cos(i*vec2(.1+.01*i, .8)+i*i+T*.5+.1*uv.x);
 		vec2 p=uv;
 		float d=length(p);
-		// BOOSTED: Increased point light intensity from .00125 to .004 for larger light heads
-		col+=.004/d*(cos(sin(i)*vec3(3,2,1))+1.); 
+		// Luminous Electric Lime point heads (#A3E635: R 0.64, G 0.90, B 0.21)
+		col+=.0042/d*(cos(sin(i)*vec3(1.4, 2.8, 0.5))*vec3(0.64, 0.90, 0.21) + vec3(0.55, 0.85, 0.20)); 
 		float b=noise(i+p+bg*1.731);
-		// BOOSTED: Increased tail intensity from .002 to .008, and thickness scale from .02 to .05
-		col+=.008*b/length(max(p,vec2(b*p.x*.05,p.y)));
-		// Changed mix color from orange/brown (bg*.25, bg*.137, bg*.05) to blue/cyan
-		col=mix(col,vec3(bg*.05,bg*.15,bg*.35),d);
+		// Cyber lime energetic plasma filaments
+		col+=.0075*b/length(max(p,vec2(b*p.x*.05,p.y))) * vec3(0.64, 0.92, 0.22);
+		// Atmospheric mix into deep Midnight Navy space (#111827 / #0B0F17)
+		col=mix(col,vec3(bg*0.04, bg*0.07, bg*0.14) + vec3(0.01, 0.03, 0.01), d);
 	}
-	// Reduce background brightness structurally by multiplying final color by 0.35
-	O=vec4(col * 0.35, 1.0);
+	// Deep contrast space illumination
+	O=vec4(col * 0.38, 1.0);
 }`;
 
 export default AnimatedShaderHero;

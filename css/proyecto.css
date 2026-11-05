@@ -95,7 +95,7 @@
 .gallery-item-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(3, 0, 20, 0.4);
+  background: rgba(17, 24, 39, 0.65);
   opacity: 0;
   display: flex;
   justify-content: center;
@@ -109,9 +109,9 @@
 }
 
 .gallery-icon-zoom {
-  background: rgba(15, 18, 40, 0.8);
-  border: 1px solid var(--border-accent);
-  color: var(--text-primary);
+  background: rgba(17, 24, 39, 0.85);
+  border: 1px solid var(--electric-lime);
+  color: var(--electric-lime);
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -119,16 +119,16 @@
   justify-content: center;
   align-items: center;
   font-size: 1.5rem;
-  box-shadow: var(--glow-blue);
+  box-shadow: 0 0 20px rgba(163, 230, 53, 0.4);
 }
 
 /* ===================== LIGHTBOX MODAL ===================== */
 .lightbox {
   position: fixed;
   inset: 0;
-  background: rgba(3, 0, 20, 0.95);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: rgba(11, 15, 23, 0.95);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
   z-index: var(--z-modal);
   opacity: 0;
   visibility: hidden;
@@ -199,9 +199,9 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(15, 18, 40, 0.6);
-  border: 1px solid var(--border-subtle);
-  color: var(--text-secondary);
+  background: rgba(17, 24, 39, 0.85);
+  border: 1px solid rgba(163, 230, 53, 0.3);
+  color: var(--cool-white);
   font-size: 2.5rem;
   width: 60px;
   height: 60px;
@@ -213,6 +213,13 @@
   z-index: 1001;
   transition: all var(--transition-fast);
   user-select: none;
+}
+
+.lightbox-arrow:hover {
+  background: var(--electric-lime);
+  color: var(--midnight-900);
+  border-color: var(--electric-lime);
+  box-shadow: 0 0 20px rgba(163, 230, 53, 0.5);
 }
 
 .lightbox-arrow:hover {

@@ -94,12 +94,12 @@
     <div class="container hero-content" style="display: none; justify-content: center; text-align: center; width: 100%; pointer-events: none; z-index: 2; position: relative;">
       <div class="hero-text" style="display: flex; flex-direction: column; align-items: center; pointer-events: auto;">
         <div class="hero-badge">
-          <span class="hero-badge-dot" style="background: #3b82f6; box-shadow: 0 0 10px #3b82f6;"></span>
+          <span class="hero-badge-dot" style="background: #A3E635; box-shadow: 0 0 10px #A3E635;"></span>
           <span data-i18n="hero.badge">Full-Stack Developer Portfolio</span>
         </div>
 
         <h1 class="hero-name" style="text-shadow: 0 4px 20px rgba(0,0,0,0.5);">
-          Fernando <span class="highlight" style="color: var(--accent-blue-light);">Adasme</span>
+          Fernando <span class="highlight" style="color: var(--electric-lime); text-shadow: 0 0 25px rgba(163, 230, 53, 0.4);">Adasme</span>
         </h1>
 
         <p class="hero-title" data-i18n="hero.title" style="text-shadow: 0 2px 10px rgba(0,0,0,0.5);">Full-Stack Developer · AI Integration Specialist</p>
@@ -180,68 +180,7 @@
         <p class="section-subtitle" data-i18n="skills.subtitle">Las herramientas que uso para dar vida a las ideas</p>
       </div>
 
-      <div class="skills-grid">
-        <!-- Frontend -->
-        <div class="glass-card skill-category reveal delay-1">
-          <h3 class="skill-category-title">
-            <span class="skill-category-icon">🎨</span>
-            Frontend
-          </h3>
-          <div class="skill-items">
-            <div class="skill-item"><span class="skill-item-icon">⚛️</span><span class="skill-item-name">React</span></div>
-            <div class="skill-item"><span class="skill-item-icon">📜</span><span class="skill-item-name">JavaScript</span></div>
-            <div class="skill-item"><span class="skill-item-icon">🌊</span><span class="skill-item-name">Tailwind CSS</span></div>
-            <div class="skill-item"><span class="skill-item-icon">⚡</span><span class="skill-item-name">Vite</span></div>
-          </div>
-        </div>
-
-        <!-- Backend -->
-        <div class="glass-card skill-category reveal delay-2">
-          <h3 class="skill-category-title">
-            <span class="skill-category-icon">⚙️</span>
-            Backend
-          </h3>
-          <div class="skill-items">
-            <div class="skill-item"><span class="skill-item-icon">🐍</span><span class="skill-item-name">Python</span></div>
-            <div class="skill-item"><span class="skill-item-icon">🌶️</span><span class="skill-item-name">Flask</span></div>
-            <div class="skill-item"><span class="skill-item-icon">🚀</span><span class="skill-item-name">FastAPI</span></div>
-            <div class="skill-item"><span class="skill-item-icon">🎯</span><span class="skill-item-name">Django</span></div>
-          </div>
-        </div>
-
-        <!-- Database & Cloud -->
-        <div class="glass-card skill-category reveal delay-3">
-          <h3 class="skill-category-title">
-            <span class="skill-category-icon">☁️</span>
-            <span data-i18n="skills.cloud">Base de Datos & Cloud</span>
-          </h3>
-          <div class="skill-items">
-            <div class="skill-item"><span class="skill-item-icon">🐘</span><span class="skill-item-name">PostgreSQL</span></div>
-            <div class="skill-item"><span class="skill-item-icon">💚</span><span class="skill-item-name">Supabase</span></div>
-            <div class="skill-item"><span class="skill-item-icon">🔷</span><span class="skill-item-name">Azure</span></div>
-            <div class="skill-item"><span class="skill-item-icon">▲</span><span class="skill-item-name">Vercel</span></div>
-          </div>
-        </div>
-
-        <!-- AI & Tools (Featured Core Specialization) -->
-        <div class="glass-card skill-category ai-featured-card reveal delay-4">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 8px;">
-            <h3 class="skill-category-title" style="margin-bottom: 0;">
-              <span class="skill-category-icon" style="background: rgba(0, 245, 255, 0.15); color: var(--ai-cyan);">🤖</span>
-              <span data-i18n="skills.ai">IA & Herramientas</span>
-            </h3>
-            <span class="ai-badge" data-i18n="skills.ai_specialty">✦ Especialidad Principal</span>
-          </div>
-          <div class="skill-items">
-            <div class="skill-item" style="border-color: rgba(0, 245, 255, 0.3); background: rgba(0, 245, 255, 0.05);"><span class="skill-item-icon">🧠</span><span class="skill-item-name" style="color: var(--ai-cyan); font-weight: 600;">OpenAI / LLMs</span></div>
-            <div class="skill-item" style="border-color: rgba(139, 92, 246, 0.3); background: rgba(139, 92, 246, 0.05);"><span class="skill-item-icon">⚡</span><span class="skill-item-name">Agentes IA & Prompts</span></div>
-            <div class="skill-item"><span class="skill-item-icon">🔄</span><span class="skill-item-name">Render</span></div>
-            <div class="skill-item"><span class="skill-item-icon">📦</span><span class="skill-item-name">Git / GitHub</span></div>
-            <div class="skill-item"><span class="skill-item-icon">🔌</span><span class="skill-item-name">REST APIs</span></div>
-            <div class="skill-item"><span class="skill-item-icon">🔷</span><span class="skill-item-name">Azure Cloud</span></div>
-          </div>
-        </div>
-      </div>
+      <div id="react-skills-root" class="reveal"></div>
     </div>
   </section>
 
@@ -254,137 +193,7 @@
         <p class="section-subtitle" data-i18n="projects.subtitle">Una selección de mi trabajo más reciente</p>
       </div>
 
-      <div class="projects-grid">
-        <!-- Ezer PME -->
-        <div class="glass-card project-card reveal delay-1" style="cursor: pointer;" onclick="window.location.href='/proyecto.html?id=ezer-pme'">
-          <div class="project-image">
-            <div class="project-ai-badge">
-              <span class="ai-badge"><span class="ai-badge-pulse"></span> <span data-i18n="projects.ai_badge">✨ Potenciado con IA</span></span>
-            </div>
-            <img src="/images/ezer-pme/Captura de pantalla 2026-03-16 191517.png" alt="Ezer PME" loading="lazy" />
-            <div class="project-image-overlay"></div>
-          </div>
-          <div class="project-info">
-            <h3 class="project-title">Ezer PME</h3>
-            <p class="project-description" data-i18n="projects.ezer-pme.desc">
-              Plataforma para la gestión inteligente del Plan de Mejoramiento Escolar. Generador de acciones con justificación pedagógica y normativa automática con IA.
-            </p>
-            <div class="project-tech">
-              <span class="tech-badge tech-ai">OpenAI</span>
-              <span class="tech-badge">Python</span>
-              <span class="tech-badge">Flask</span>
-              <span class="tech-badge">React</span>
-              <span class="tech-badge">Azure</span>
-              <span class="tech-badge">Redis</span>
-            </div>
-            <div class="project-links">
-              <span class="project-link project-link-github" data-i18n="projects.private" onclick="event.stopPropagation();">🔒 Privado</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Ezer UTP -->
-        <div class="glass-card project-card reveal delay-2" style="cursor: pointer;" onclick="window.location.href='/proyecto.html?id=ezer-utp'">
-          <div class="project-image">
-            <div class="project-ai-badge">
-              <span class="ai-badge"><span class="ai-badge-pulse"></span> <span data-i18n="projects.ai_badge">✨ Potenciado con IA</span></span>
-            </div>
-            <img src="/images/ezer-utp/Captura de pantalla 2026-03-16 191953.png" alt="Ezer UTP" loading="lazy" />
-            <div class="project-image-overlay"></div>
-          </div>
-          <div class="project-info">
-            <h3 class="project-title">Ezer UTP</h3>
-            <p class="project-description" data-i18n="projects.ezer-utp.desc">
-              Optimización de la planificación pedagógica. Retroalimentación instantánea sobre coherencia curricular y generación automática de material basado en OA.
-            </p>
-            <div class="project-tech">
-              <span class="tech-badge tech-ai">OpenAI</span>
-              <span class="tech-badge">React 19</span>
-              <span class="tech-badge">Flask</span>
-              <span class="tech-badge">Azure</span>
-              <span class="tech-badge">Supabase</span>
-              <span class="tech-badge">Tailwind</span>
-            </div>
-            <div class="project-links">
-              <span class="project-link project-link-github" data-i18n="projects.private" onclick="event.stopPropagation();">🔒 Privado</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Floreria Esperanza -->
-        <div class="glass-card project-card reveal delay-3" style="cursor: pointer;" onclick="window.location.href='/proyecto.html?id=floreria-esperanza'">
-          <div class="project-image">
-            <img src="/images/floreria-esperanza/Captura de pantalla 2026-03-16 192707.png" alt="Florería Esperanza" loading="lazy" />
-            <div class="project-image-overlay"></div>
-          </div>
-          <div class="project-info">
-            <h3 class="project-title">Florería Esperanza</h3>
-            <p class="project-description" data-i18n="projects.floreria.desc">
-              App Web de catálogo para una florería con panel de administración, gestión de productos y API serverless.
-            </p>
-            <div class="project-tech">
-              <span class="tech-badge">React 19</span>
-              <span class="tech-badge">Supabase</span>
-              <span class="tech-badge">Vercel</span>
-              <span class="tech-badge">Framer Motion</span>
-              <span class="tech-badge">Tailwind</span>
-            </div>
-            <div class="project-links">
-              <a href="https://floreriaesperanza.com" target="_blank" rel="noopener" class="project-link project-link-live" onclick="event.stopPropagation();">🌐 Ver Sitio</a>
-              <span class="project-link project-link-github" data-i18n="projects.private" onclick="event.stopPropagation();">🔒 Privado</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Frahda Studio -->
-        <div class="glass-card project-card reveal delay-4" style="cursor: pointer;" onclick="window.location.href='/proyecto.html?id=frahda-studio'">
-          <div class="project-image">
-            <img src="/images/frahda-studio/Captura de pantalla 2026-03-16 193919.png" alt="Frahda Studio" loading="lazy" />
-            <div class="project-image-overlay"></div>
-          </div>
-          <div class="project-info">
-            <h3 class="project-title">FrahdaStudio</h3>
-            <p class="project-description" data-i18n="projects.frahda.desc">
-              App Web completa para un salón de belleza: gestión de clientes, pagos, agenda, servicios, tienda con portal de pago integrado (Getnet, Webpay, PayPal).
-            </p>
-            <div class="project-tech">
-              <span class="tech-badge">Django</span>
-              <span class="tech-badge">React</span>
-              <span class="tech-badge">PostgreSQL</span>
-              <span class="tech-badge">Webpay</span>
-              <span class="tech-badge">PayPal</span>
-              <span class="tech-badge">Supabase</span>
-            </div>
-            <div class="project-links">
-              <a href="https://www.frahdastudio.com" target="_blank" rel="noopener" class="project-link project-link-live" onclick="event.stopPropagation();">🌐 Ver Sitio</a>
-              <span class="project-link project-link-github" data-i18n="projects.private" onclick="event.stopPropagation();">🔒 Privado</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Transportes Eslainer -->
-        <div class="glass-card project-card reveal delay-1" style="cursor: pointer;" onclick="window.location.href='/proyecto.html?id=eslainer'">
-          <div class="project-image">
-            <img src="/images/eslainer/foto-principal.png" alt="Transportes Eslainer" loading="lazy" />
-            <div class="project-image-overlay"></div>
-          </div>
-          <div class="project-info">
-            <h3 class="project-title">Transportes Eslainer</h3>
-            <p class="project-description" data-i18n="projects.eslainer.desc">
-              Landing Page con Scroll-driven animation, carrusel de servicios, botones CTA, carrusel de logo clientes, proveedores y empresas acreditadas, creada con REACT + TAILWIND CSS y Vite.
-            </p>
-            <div class="project-tech">
-              <span class="tech-badge">React</span>
-              <span class="tech-badge">Tailwind CSS</span>
-              <span class="tech-badge">Vite</span>
-            </div>
-            <div class="project-links">
-              <a href="https://www.transporteseslainer.cl" target="_blank" rel="noopener" class="project-link project-link-live" onclick="event.stopPropagation();">🌐 Ver Sitio</a>
-              <span class="project-link project-link-github" data-i18n="projects.private" onclick="event.stopPropagation();">🔒 Privado</span>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div id="react-projects-root" class="reveal"></div>
     </div>
   </section>
 
@@ -397,32 +206,7 @@
         <p class="section-subtitle" data-i18n="services.subtitle">Soluciones digitales de principio a fin</p>
       </div>
 
-      <div class="services-grid">
-        <div class="glass-card service-card reveal delay-1">
-          <div class="service-icon">💻</div>
-          <h3 class="service-title" data-i18n="services.web.title">Desarrollo Web</h3>
-          <p class="service-description" data-i18n="services.web.desc">
-            Aplicaciones web completas y responsivas con React, Python y tecnologías modernas. Desde landing pages hasta plataformas complejas con paneles de administración.
-          </p>
-        </div>
-
-        <div class="glass-card service-card service-ai-featured reveal delay-2">
-          <span class="service-featured-pill" data-i18n="services.ai_featured">⭐ Especialidad Core</span>
-          <div class="service-icon">🤖</div>
-          <h3 class="service-title" data-i18n="services.ai.title">Integración IA</h3>
-          <p class="service-description" data-i18n="services.ai.desc">
-            Automatización inteligente con OpenAI y modelos de lenguaje. Generación de contenido, chatbots, análisis de datos y flujos de trabajo automatizados.
-          </p>
-        </div>
-
-        <div class="glass-card service-card reveal delay-3">
-          <div class="service-icon">🎨</div>
-          <h3 class="service-title" data-i18n="services.ux.title">UX/UI Design</h3>
-          <p class="service-description" data-i18n="services.ux.desc">
-            Interfaces intuitivas y visualmente atractivas. Diseño centrado en el usuario, prototipado rápido y experiencias digitales que destacan.
-          </p>
-        </div>
-      </div>
+      <div id="react-services-root" class="reveal"></div>
     </div>
   </section>
 

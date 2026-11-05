@@ -2,19 +2,20 @@
 .btn {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+  gap: 10px;
   padding: 14px 32px;
   font-family: var(--font-heading);
   font-size: 0.95rem;
-  font-weight: 600;
+  font-weight: 700;
   border: none;
   border-radius: 50px;
-  cursor: none;
+  cursor: pointer;
   transition: all var(--transition-base);
   position: relative;
   overflow: hidden;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.8px;
 }
 
 .btn::before {
@@ -26,32 +27,40 @@
   transition: opacity var(--transition-base);
 }
 
+/* Primary Button: Electric Lime with high-contrast Midnight Navy text */
 .btn-primary {
-  background: var(--gradient-primary);
-  color: #fff;
-  box-shadow: var(--glow-blue);
+  background: var(--electric-lime);
+  color: var(--midnight-900) !important;
+  font-weight: 800;
+  box-shadow: 0 0 25px rgba(163, 230, 53, 0.45);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 30px rgba(37, 99, 235, 0.6), 0 0 80px rgba(37, 99, 235, 0.2);
+  background: var(--electric-lime-light);
+  box-shadow: 0 0 35px rgba(163, 230, 53, 0.65), 0 0 80px rgba(163, 230, 53, 0.25);
+  color: var(--midnight-void) !important;
 }
 
 .btn-primary:active {
   transform: translateY(0);
+  background: var(--electric-lime-dark);
 }
 
+/* Outline Button: Sleek Midnight Navy Glass with Electric Lime Border */
 .btn-outline {
-  background: transparent;
-  color: var(--text-primary);
-  border: 1px solid var(--border-light);
-  backdrop-filter: blur(10px);
+  background: rgba(17, 24, 39, 0.7);
+  color: var(--cool-white);
+  border: 1px solid rgba(163, 230, 53, 0.35);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .btn-outline:hover {
-  border-color: var(--accent-blue);
-  background: rgba(37, 99, 235, 0.1);
-  box-shadow: var(--glow-blue);
+  border-color: var(--electric-lime);
+  background: rgba(163, 230, 53, 0.12);
+  color: var(--electric-lime);
+  box-shadow: 0 0 25px rgba(163, 230, 53, 0.3);
   transform: translateY(-2px);
 }
 
@@ -65,9 +74,10 @@
 }
 
 .btn-icon:hover {
-  border-color: var(--accent-blue);
-  color: var(--accent-blue-light);
-  background: rgba(37, 99, 235, 0.1);
+  border-color: var(--electric-lime);
+  color: var(--electric-lime);
+  background: rgba(163, 230, 53, 0.1);
+  box-shadow: 0 0 15px rgba(163, 230, 53, 0.2);
 }
 
 /* ===== Cards ===== */
@@ -94,9 +104,9 @@
 }
 
 .glass-card:hover {
-  border-color: var(--border-accent);
+  border-color: rgba(163, 230, 53, 0.45);
   transform: translateY(-4px);
-  box-shadow: var(--glow-blue);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 25px rgba(163, 230, 53, 0.18);
 }
 
 .glass-card:hover::before {
@@ -109,21 +119,27 @@
   align-items: center;
   gap: 4px;
   padding: 4px 12px;
-  background: rgba(37, 99, 235, 0.1);
-  border: 1px solid rgba(37, 99, 235, 0.2);
+  background: rgba(17, 24, 39, 0.85);
+  border: 1px solid rgba(243, 244, 246, 0.12);
   border-radius: 50px;
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  color: var(--accent-blue-light);
+  color: var(--cool-white-muted);
   white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+
+.tech-badge:hover {
+  border-color: rgba(163, 230, 53, 0.4);
+  color: var(--electric-lime);
 }
 
 .tech-badge.tech-ai {
-  background: rgba(0, 245, 255, 0.12);
-  border-color: rgba(0, 245, 255, 0.35);
-  color: var(--ai-cyan);
-  box-shadow: 0 0 12px rgba(0, 245, 255, 0.18);
-  font-weight: 500;
+  background: rgba(163, 230, 53, 0.12);
+  border-color: rgba(163, 230, 53, 0.4);
+  color: var(--electric-lime);
+  box-shadow: 0 0 12px rgba(163, 230, 53, 0.2);
+  font-weight: 600;
 }
 
 /* ===== AI Specialized Badges & Pills ===== */
@@ -131,15 +147,15 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 5px 12px;
-  background: rgba(37, 99, 235, 0.15);
-  border: 1px solid rgba(59, 130, 246, 0.35);
+  padding: 5px 14px;
+  background: rgba(17, 24, 39, 0.85);
+  border: 1px solid rgba(163, 230, 53, 0.45);
   border-radius: 50px;
   font-family: var(--font-mono);
   font-size: 0.75rem;
   font-weight: 600;
-  color: var(--accent-blue-light);
-  box-shadow: 0 0 16px rgba(37, 99, 235, 0.25);
+  color: var(--electric-lime);
+  box-shadow: 0 0 18px rgba(163, 230, 53, 0.25);
   backdrop-filter: blur(10px);
   letter-spacing: 0.5px;
   animation: ai-pulse 3.5s ease-in-out infinite;
@@ -149,44 +165,44 @@
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--accent-blue-light);
-  box-shadow: 0 0 8px var(--accent-blue-light);
+  background: var(--electric-lime);
+  box-shadow: 0 0 8px var(--electric-lime);
   display: inline-block;
   animation: pulse-dot 2s infinite;
 }
 
 @keyframes pulse-dot {
   0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.4); opacity: 0.5; }
+  50% { transform: scale(1.4); opacity: 0.6; }
 }
 
 @keyframes ai-pulse {
-  0%, 100% { box-shadow: 0 0 15px rgba(37, 99, 235, 0.2); }
-  50% { box-shadow: 0 0 25px rgba(37, 99, 235, 0.4); }
+  0%, 100% { box-shadow: 0 0 15px rgba(163, 230, 53, 0.2); }
+  50% { box-shadow: 0 0 25px rgba(163, 230, 53, 0.45); }
 }
 
 /* Featured AI Card highlight */
 .ai-featured-card {
-  border-color: rgba(37, 99, 235, 0.4) !important;
-  background: rgba(14, 25, 60, 0.8) !important;
-  box-shadow: 0 0 30px rgba(37, 99, 235, 0.15) !important;
+  border-color: rgba(163, 230, 53, 0.45) !important;
+  background: rgba(17, 24, 39, 0.85) !important;
+  box-shadow: 0 0 35px rgba(163, 230, 53, 0.16) !important;
   position: relative;
 }
 
 .ai-featured-card::before {
   opacity: 1 !important;
-  background: rgba(37, 99, 235, 0.05) !important;
+  background: radial-gradient(circle at 50% 0%, rgba(163, 230, 53, 0.1) 0%, transparent 70%) !important;
 }
 
 .ai-featured-card:hover {
-  border-color: var(--accent-blue-light) !important;
-  box-shadow: 0 0 30px rgba(37, 99, 235, 0.35) !important;
+  border-color: var(--electric-lime) !important;
+  box-shadow: 0 0 35px rgba(163, 230, 53, 0.4) !important;
 }
 
 /* ===== Divider ===== */
 .divider {
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--border-light), transparent);
+  background: linear-gradient(90deg, transparent, rgba(163, 230, 53, 0.25), transparent);
   margin: 0 auto;
   max-width: 600px;
 }
@@ -204,10 +220,10 @@
   transform: translateX(-50%) translateY(4px);
   padding: 6px 12px;
   background: var(--bg-secondary);
-  border: 1px solid var(--border-light);
+  border: 1px solid rgba(163, 230, 53, 0.3);
   border-radius: var(--border-radius-sm);
   font-size: 0.75rem;
-  color: var(--text-secondary);
+  color: var(--cool-white);
   white-space: nowrap;
   opacity: 0;
   pointer-events: none;

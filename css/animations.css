@@ -94,7 +94,7 @@
 
 .reveal.revealed {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
 
 .reveal-left {
@@ -143,12 +143,12 @@
   0%, 100% {
     opacity: 1;
     transform: scale(1);
-    box-shadow: 0 0 10px #00F5FF, 0 0 20px rgba(0, 245, 255, 0.6);
+    box-shadow: 0 0 10px #A3E635, 0 0 20px rgba(163, 230, 53, 0.6);
   }
   50% {
     opacity: 0.2;
     transform: scale(0.65);
-    box-shadow: 0 0 2px #00F5FF;
+    box-shadow: 0 0 2px #A3E635;
   }
 }
 
@@ -156,9 +156,9 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #00F5FF;
+  background: #A3E635;
   display: inline-block;
-  box-shadow: 0 0 10px #00F5FF;
+  box-shadow: 0 0 10px #A3E635;
   animation: trust-dot-blink 1.4s ease-in-out infinite;
   flex-shrink: 0;
 }

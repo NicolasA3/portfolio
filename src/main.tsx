@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
+import './tailwind.css';
 import AnimatedShaderHero from './components/ui/animated-shader-hero';
+import ProjectsShowcase from './components/ui/projects-showcase';
+import SkillsFolders from './components/ui/skills-folders';
+import ChromaServicesCards from './components/ui/chroma-services-cards';
 
 const heroTexts = {
   es: {
@@ -82,11 +86,42 @@ const HeroApp: React.FC = () => {
   );
 };
 
+// Mount Hero Component
 const reactHeroRoot = document.getElementById('react-hero-root');
 if (reactHeroRoot) {
   createRoot(reactHeroRoot).render(
     <React.StrictMode>
       <HeroApp />
+    </React.StrictMode>
+  );
+}
+
+// Mount Featured Projects Showcase (CardStack)
+const reactProjectsRoot = document.getElementById('react-projects-root');
+if (reactProjectsRoot) {
+  createRoot(reactProjectsRoot).render(
+    <React.StrictMode>
+      <ProjectsShowcase />
+    </React.StrictMode>
+  );
+}
+
+// Mount Skills & Technologies Folders
+const reactSkillsRoot = document.getElementById('react-skills-root');
+if (reactSkillsRoot) {
+  createRoot(reactSkillsRoot).render(
+    <React.StrictMode>
+      <SkillsFolders />
+    </React.StrictMode>
+  );
+}
+
+// Mount Chroma Holographic Services Cards
+const reactServicesRoot = document.getElementById('react-services-root');
+if (reactServicesRoot) {
+  createRoot(reactServicesRoot).render(
+    <React.StrictMode>
+      <ChromaServicesCards />
     </React.StrictMode>
   );
 }

@@ -23,7 +23,21 @@ body {
   line-height: 1.7;
   overflow-x: hidden;
   -webkit-tap-highlight-color: transparent;
-  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Cpath d='M4 2 L20 10 L12 12 L9 20 Z' fill='%23FACC15' stroke='%23ffffff' stroke-width='1.5' stroke-linejoin='round'/%3E%3C/svg%3E") 4 2, auto;
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Cpath d='M4 2 L20 10 L12 12 L9 20 Z' fill='%23A3E635' stroke='%23111827' stroke-width='1.5' stroke-linejoin='round'/%3E%3C/svg%3E") 4 2, auto;
+  position: relative;
+}
+
+/* Subtle Technical Cyber Grid Overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(163, 230, 53, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(163, 230, 53, 0.02) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+  z-index: 0;
 }
 
 /* Touch devices should never use custom URL cursors */
@@ -46,23 +60,23 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--accent-blue);
+  background: var(--electric-lime);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-purple);
+  background: var(--electric-lime-light);
 }
 
 /* ===== Selection ===== */
 ::selection {
-  background: rgba(37, 99, 235, 0.3);
-  color: var(--text-primary);
+  background: rgba(163, 230, 53, 0.3);
+  color: #ffffff;
 }
 
 /* ===== Links ===== */
 a, button, .btn {
-  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Cpath d='M4 2 L20 10 L12 12 L9 20 Z' fill='%23F97316' stroke='%23ffffff' stroke-width='1.5' stroke-linejoin='round'/%3E%3C/svg%3E") 4 2, pointer;
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Cpath d='M4 2 L20 10 L12 12 L9 20 Z' fill='%23BEF264' stroke='%23111827' stroke-width='1.5' stroke-linejoin='round'/%3E%3C/svg%3E") 4 2, pointer;
 }
 
 a {
@@ -83,6 +97,7 @@ img {
   max-width: var(--container-max);
   margin: 0 auto;
   padding: 0 24px;
+  position: relative;
 }
 
 /* ===== Section ===== */
@@ -102,29 +117,35 @@ img {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 16px;
-  background: var(--bg-glass);
-  border: 1px solid var(--border-light);
+  padding: 6px 18px;
+  background: rgba(17, 24, 39, 0.75);
+  border: 1px solid rgba(163, 230, 53, 0.35);
   border-radius: 50px;
   font-family: var(--font-mono);
   font-size: 0.8rem;
-  color: var(--accent-cyan);
+  font-weight: 600;
+  color: var(--electric-lime);
   margin-bottom: 16px;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 0 15px rgba(163, 230, 53, 0.15);
+  letter-spacing: 0.5px;
 }
 
 .section-badge::before {
   content: '✦';
-  color: var(--accent-purple-light);
+  color: var(--electric-lime);
+  font-size: 0.85rem;
 }
 
 .section-title {
   font-family: var(--font-heading);
-  font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 700;
-  color: var(--text-primary);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 800;
+  color: var(--cool-white);
   line-height: 1.2;
   margin-bottom: 16px;
+  letter-spacing: -0.02em;
 }
 
 .section-subtitle {
@@ -136,7 +157,8 @@ img {
 
 /* ===== Typography helpers ===== */
 .gradient-text {
-  color: var(--accent-blue-light);
+  color: var(--electric-lime);
+  text-shadow: 0 0 20px rgba(163, 230, 53, 0.3);
 }
 
 .glow-text {
